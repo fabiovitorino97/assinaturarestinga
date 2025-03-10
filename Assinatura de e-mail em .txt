@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+    <table style="width: 600px; font-family: Arial, sans-serif; border-collapse: collapse;">
+        <tr>
+            <td style="width: 100px; padding: 10px; vertical-align: middle;">
+                <img src="restinga.png" alt="Câmara Municipal de Restinga" style="width: 100px;">
+            </td>
+            <td style="padding: 10px; width: 250px; vertical-align: middle; text-align: center;">
+                <p style="margin: 0; font-size: 14px; font-weight: bold; color: #003366;">NOME DO USUÁRIO</p>
+                <p style="margin: 0; font-size: 12px; color: #555;">CARGO</p>
+                <p style="margin: 5px 0 0; font-size: 12px;">
+                    📧 <a href="mailto:email@restinga.sp.gov.br" style="text-decoration: none; color: #003366;">email@restinga.sp.gov.br</a>
+                </p>
+            </td>
+            <td style="padding: 10px; width: 200px; text-align: center; vertical-align: middle; position: relative;">
+                <div style="border-left: 2px solid #003366; height: 65%; position: absolute; top: 15%; left: 0;"></div>
+                <p style="margin: 0; font-size: 12px; font-weight: bold; color: #003366;">CÂMARA MUNICIPAL DE RESTINGA</p>
+                <p style="margin: 10px 0 0; font-size: 12px; color: #555;">📍 R. Cel. Amélio Rosa, 101</p>
+                <p style="margin: 0; font-size: 12px; color: #555;">Restinga - SP, CEP 14430-000</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

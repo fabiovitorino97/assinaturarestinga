@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerador de Assinatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .signature {
+            display: none;
+            width: 700px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: white;
+        }
+        .signature-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .signature-table td {
+            padding: 5px;
+            vertical-align: middle;
+        }
+        .logo {
+            width: 80px;
+        }
+        .info {
+            text-align: center;
+        }
+        .divider {
+            border-left: 2px solid #003366;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Gerador de Assinatura</h2>
+    <form onsubmit="generateSignature(event)">
+        <label>Nome Completo:</label>
+        <input type="text" id="nome" required><br><br>
+        <label>Cargo:</label>
+        <input type="text" id="cargo" required><br><br>
+        <label>Email:</label>
+        <input type="email" id="email" required><br><br>
+        <button type="submit">Gerar Assinatura</button>
+    </form>
+
+    <div class="signature" id="signature">
+        <table class="signature-table" id="signature-content">
+            <tr>
+                <td style="width: 90px; text-align: center;">
+                    <img src="brasao.jpg" alt="Câmara Municipal de Restinga" class="logo">
+                </td>
+                <td class="info">
+                    <p style="margin: 0; font-size: 14px; font-weight: bold; color: #003366;" id="sig-nome">NOME</p>
+                    <p style="margin: 0; font-size: 12px; color: #555;" id="sig-cargo">CARGO</p>
+                    <p style="margin: 5px 0 0; font-size: 12px;">
+                        📧 <a id="sig-email" href="#" style="text-decoration: none; color: #003366;">EMAIL</a>
+                    </p>
+                </td>
+                <td class="divider"></td>
+                <td class="info">
+                    <p style="margin: 0; font-size: 13px; font-weight: bold; color: #003366;">CÂMARA MUNICIPAL DE RESTINGA</p>
+                    <p style="margin: 10px 0 0; font-size: 12px; color: #555;">📍 R. Cel. Amélio Rosa, 101</p>
+                    <p style="margin: 0; font-size: 12px; color: #555;">Restinga - SP, CEP 14430-000</p>
+                </td>
+            </tr>
+        </table>
+        <button onclick="downloadSignature()">Baixar Assinatura</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function generateSignature(event) {
+            event.preventDefault();
+            
+            document.getElementById("sig-nome").innerText = document.getElementById("nome").value;
+            document.getElementById("sig-cargo").innerText = document.getElementById("cargo").value;
+            document.getElementById("sig-email").innerText = document.getElementById("email").value;
+            document.getElementById("sig-email").href = "mailto:" + document.getElementById("email").value;
+            
+            document.getElementById("signature").style.display = "block";
+        }
+
+        function downloadSignature() {
+            const signature = document.getElementById("signature-content");
+            html2canvas(signature, { scale: 3 }).then(canvas => { // Aumentando a escala para melhorar a qualidade
+                let link = document.createElement("a");
+                link.href = canvas.toDataURL("image/jpeg", 1.0); // Qualidade máxima
+                link.download = "assinatura.jpg";
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>
