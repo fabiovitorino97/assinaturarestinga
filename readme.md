@@ -32,13 +32,9 @@ Este projeto utiliza a biblioteca JavaScript [html2canvas](https://html2canvas.h
 
 Você pode personalizar o projeto alterando o design da assinatura no arquivo HTML e as cores no arquivo CSS, além de substituir o logo (`brasao.jpg`) pela imagem que preferir.
 
-## Licença
-
-Este projeto é de código aberto e pode ser usado e modificado conforme necessário. Não há restrições para uso comercial ou pessoal.
-
 ---
 
 **Câmara Municipal de Restinga**  
 📍 R. Cel. Amélio Rosa, 101  
 Restinga - SP, CEP 14430-000  
-[Visite nosso site](http://www.restinga.sp.gov.br)
+[Visite nosso site](http://www.camararestinga.sp.gov.br)
