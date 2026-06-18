@@ -197,24 +197,14 @@ function generateSignature(event) {
 }
 
 function downloadSignature() {
-
-    const signature =
-        document.getElementById("signature-content");
+    const signature = document.getElementById("signature-content");
 
     html2canvas(signature, {
-        width: 900,
-        height: 285,
-        scale: 2,
-        backgroundColor: "#ffffff",
-        useCORS: true
+        scale: 1
     }).then(canvas => {
-
         let link = document.createElement("a");
-
-        link.href = canvas.toDataURL("image/png");
-
-        link.download = "assinatura.png";
-
+        link.href = canvas.toDataURL("image/jpeg", 0.9);
+        link.download = "assinatura.jpg";
         link.click();
     });
 }
