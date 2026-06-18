@@ -12,7 +12,7 @@
         }
         .signature {
             display: none;
-            width: 550px;
+            width: 900px;
             margin: auto;
             border: 1px solid #ccc;
             padding: 10px;
@@ -89,15 +89,29 @@
         
         function downloadSignature() {
             const signature = document.getElementById("signature-content");
-
-                html2canvas(signature, { scale: 2 }).then(canvas => {
-                    let link = document.createElement("a");
-                    link.href = canvas.toDataURL("image/jpeg", 0.9);
+            
+            html2canvas(signature, {
+                    scale: 1
+                }).then(canvas => {
+                
+                    const finalCanvas = document.createElement("canvas");
+                    finalCanvas.width = 900;
+                    finalCanvas.height = 285;
+                
+                    const ctx = finalCanvas.getContext("2d");
+                
+                    ctx.drawImage(
+                        canvas,
+                        0, 0, canvas.width, canvas.height,
+                        0, 0, 900, 285
+                    );
+                
+                    const link = document.createElement("a");
+                    link.href = finalCanvas.toDataURL("image/jpeg", 0.95);
                     link.download = "assinatura.jpg";
                     link.click();
                 });
             }
-       
     </script>
 </body>
 </html>
