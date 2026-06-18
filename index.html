@@ -90,7 +90,7 @@
 
         function downloadSignature() {
             const signature = document.getElementById("signature-content");
-            html2canvas(signature, { scale: 2 }).then(canvas => { // Aumentando a escala para melhorar a qualidade
+            html2canvas(signature, { scale: 3 }).then(canvas => { // Aumentando a escala para melhorar a qualidade
                 let link = document.createElement("a");
                 link.href = canvas.toDataURL("image/jpeg", 0.6); // Qualidade máxima
                 link.download = "assinatura.jpg";
